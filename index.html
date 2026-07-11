@@ -267,6 +267,53 @@
             margin-top: 20px;
             color: #6b1d2f;
         }
+        .mini-reviews {
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .mini-reviews-title {
+            text-align: center;
+            color: #6b1d2f;
+            font-size: 1.4rem;
+            margin-bottom: 18px;
+        }
+        .mini-reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .mini-review-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 3px solid #b76e79;
+        }
+        .mini-stars {
+            color: #ffc107;
+            margin-bottom: 8px;
+        }
+        .mini-customer-name {
+            font-weight: 700;
+            color: #6b1d2f;
+            margin-bottom: 6px;
+        }
+        .mini-review-text {
+            color: #555;
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+        .see-all-reviews {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            color: #6b1d2f;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .see-all-reviews:hover {
+            text-decoration: underline;
+        }
         @media (max-width: 760px) {
             nav {
                 flex-direction: column;
@@ -315,6 +362,28 @@
         <p>Professional beautician and makeup artist dedicated to enhancing natural beauty with expert makeup and beauty services. Specializing in bridal makeup, party makeup, HD makeup, hairstyling, and skincare. Committed to providing personalized services, high quality products, and a flawless look for every occasion.</p>
         <img src="komal.jpg" alt="Glam by Komal">
         <p>Hello, I am Komal Shukla, a professional makeup artist and educator. I offer premium offline services and makeup workshops in Lucknow, Kanpur, Unnao and all over India. My mission is not just to apply makeup, but to create a personalized flawless look that makes every client feel confident and radiant on their special day.</p>
+    </div>
+
+    <div class="mini-reviews">
+        <h3 class="mini-reviews-title">💬 What Clients Say</h3>
+        <div class="mini-reviews-grid">
+            <div class="mini-review-card">
+                <div class="mini-stars">★★★★★</div>
+                <div class="mini-customer-name">Priya Singh</div>
+                <div class="mini-review-text">Komal did my bridal makeup and I felt absolutely stunning. She was professional, patient, and created the perfect look.</div>
+            </div>
+            <div class="mini-review-card">
+                <div class="mini-stars">★★★★★</div>
+                <div class="mini-customer-name">Neha Sharma</div>
+                <div class="mini-review-text">Amazing work! The makeup lasted through the entire event and looked flawless in every photograph.</div>
+            </div>
+            <div class="mini-review-card">
+                <div class="mini-stars">★★★★☆</div>
+                <div class="mini-customer-name">Anjali Gupta</div>
+                <div class="mini-review-text">Great haircut and styling. The service was excellent and the final look was exactly what I wanted.</div>
+            </div>
+        </div>
+        <a href="reviews.html" class="see-all-reviews">See All Reviews →</a>
     </div>
 
     <div class="contact-container">
