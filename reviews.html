@@ -1,308 +1,334 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glam by Komal - Customer Reviews</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Reviews - Glam by Komal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
         body {
-            background: linear-gradient(135deg, #ffeef8 0%, #fff0f5 100%);
-            padding: 20px;
             min-height: 100vh;
+            background: linear-gradient(135deg, #ffeef8 0%, #fff5fb 100%);
+            color: #333;
+            padding: 20px;
         }
-        
-        .reviews-container {
-            max-width: 900px;
+        .page-shell {
+            max-width: 1080px;
             margin: 0 auto;
         }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 30px 20px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-bottom: 26px;
         }
-        
-        .header h1 {
+        .topbar .title-group h1 {
+            font-size: 2.4rem;
             color: #6b1d2f;
-            font-size: 2.5rem;
             margin-bottom: 10px;
         }
-        
-        .header p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-        
-        .nav-bar {
+        nav {
+            max-width: 1080px;
+            margin: 0 auto 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
             background: #eee;
-            padding: 15px;
-            text-align: center;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        
-        .nav-bar a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-bar a:hover {
-            color: #b76e79;
-        }
-        
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        
-        .review-card {
-            background: white;
-            padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-left: 4px solid #b76e79;
+            padding: 12px 18px;
         }
-        
-        .review-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        
-        .stars {
-            color: #ffc107;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        
-        .customer-name {
-            font-weight: bold;
+        .nav-brand {
+            font-weight: 700;
             color: #6b1d2f;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
         }
-        
-        .service-type {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            font-style: italic;
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-        
-        .review-text {
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 10px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #fff;
+            background: #b76e79;
+        }
+        .topbar .title-group p {
             color: #555;
             line-height: 1.6;
-            margin-bottom: 10px;
         }
-        
+        .page-actions {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .page-actions a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 18px;
+            background: #fff;
+            color: #4a4a4a;
+            text-decoration: none;
+            border-radius: 999px;
+            border: 1px solid #f0d7e1;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            transition: transform 0.2s, background 0.2s, color 0.2s;
+        }
+        .page-actions a:hover {
+            transform: translateY(-2px);
+            background: #f7d5e6;
+            color: #6b1d2f;
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+            margin-bottom: 32px;
+        }
+        .review-card {
+            background: white;
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 14px 32px rgba(0,0,0,0.08);
+            border-top: 4px solid #b76e79;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+        }
+        .stars {
+            color: #ffc107;
+            font-size: 1.3rem;
+            margin-bottom: 14px;
+        }
+        .customer-name {
+            font-weight: 700;
+            color: #6b1d2f;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+        .service-type {
+            color: #777;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        .review-text {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
         .review-date {
-            color: #aaa;
-            font-size: 0.85rem;
+            color: #999;
+            font-size: 0.9rem;
         }
-        
         .add-review-section {
             background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
+            padding: 28px;
+            border-radius: 18px;
+            box-shadow: 0 14px 32px rgba(0,0,0,0.08);
+            margin-bottom: 32px;
         }
-        
         .add-review-section h2 {
             color: #6b1d2f;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             text-align: center;
+            font-size: 1.8rem;
         }
-        
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
-        
         .form-group label {
             display: block;
-            margin-bottom: 5px;
-            color: #333;
-            font-weight: 500;
+            margin-bottom: 8px;
+            color: #444;
+            font-weight: 600;
         }
-        
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 10px;
+            padding: 14px 16px;
+            border-radius: 12px;
             border: 1px solid #ddd;
-            border-radius: 8px;
             font-family: inherit;
             font-size: 1rem;
         }
-        
         .form-group textarea {
+            min-height: 120px;
             resize: vertical;
-            min-height: 100px;
         }
-        
         .rating-input {
             display: flex;
             gap: 10px;
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
-        
         .rating-input span {
             cursor: pointer;
             color: #ddd;
-            transition: color 0.2s;
+            transition: color 0.2s ease;
         }
-        
-        .rating-input span:hover,
-        .rating-input span.active {
+        .rating-input span.active,
+        .rating-input span:hover {
             color: #ffc107;
         }
-        
         .submit-btn {
+            width: 100%;
+            padding: 14px 0;
+            border: none;
+            border-radius: 12px;
             background: #b76e79;
             color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 8px;
             font-size: 1rem;
-            font-weight: bold;
+            font-weight: 700;
             cursor: pointer;
-            width: 100%;
-            transition: background 0.3s;
+            box-shadow: 0 10px 20px rgba(183,110,121,0.2);
+            transition: transform 0.2s ease, background 0.2s ease;
         }
-        
         .submit-btn:hover {
             background: #9a5a64;
+            transform: translateY(-2px);
         }
-        
         .footer {
             text-align: center;
-            padding: 20px;
+            padding: 20px 0 30px;
             color: #666;
+        }
+        @media (max-width: 720px) {
+            .topbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="nav-brand">Glam by Komal</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </nav>
+    <div class="page-shell">
+        <div class="topbar">
+            <div class="title-group">
+                <h1>💬 Glam by Komal Reviews</h1>
+                <p>Read real feedback from happy clients and see why Glam by Komal is trusted for beauty, makeup, and salon services.</p>
+            </div>
+            <div class="page-actions">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                <a href="signup.html"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+            </div>
+        </div>
 
-<div class="reviews-container">
-    <div class="header">
-        <h1>💬 Glam by Komal - Reviews</h1>
-        <p>See what our happy customers say!</p>
-    </div>
-    
-    <div class="nav-bar">
-        <a href="index.html">🏠 Home</a>
-        <a href="reviews.html">⭐ Reviews</a>
-        <a href="login.html">🔐 Login</a>
-        <a href="signup.html">📝 Sign Up</a>
-    </div>
-    
-    <div class="add-review-section">
-        <h2>✍️ Share Your Experience</h2>
-        <form id="reviewForm">
-            <div class="form-group">
-                <label>Your Name *</label>
-                <input type="text" id="name" required placeholder="Enter your name">
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="customer-name">Priya Singh</div>
+                <div class="service-type">Bridal Makeup</div>
+                <div class="review-text">Komal did my bridal makeup and I felt absolutely stunning. She was professional, patient, and created the perfect look for my wedding photos.</div>
+                <div class="review-date">2 weeks ago</div>
             </div>
-            
-            <div class="form-group">
-                <label>Service Type *</label>
-                <select id="service" required>
-                    <option value="">Select a service</option>
-                    <option value="Bridal Makeup">Bridal Makeup</option>
-                    <option value="Party Makeup">Party Makeup</option>
-                    <option value="Hair Styling">Hair Styling</option>
-                    <option value="Facial">Facial</option>
-                    <option value="Threading & Waxing">Threading & Waxing</option>
-                    <option value="Manicure/Pedicure">Manicure/Pedicure</option>
-                    <option value="Hair Color">Hair Color</option>
-                </select>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="customer-name">Neha Sharma</div>
+                <div class="service-type">Party Makeup</div>
+                <div class="review-text">Amazing work! The makeup lasted through the entire event and looked flawless in every photograph. Komal is truly talented.</div>
+                <div class="review-date">1 month ago</div>
             </div>
-            
-            <div class="form-group">
-                <label>Rating *</label>
-                <div class="rating-input" id="ratingInput">
-                    <span data-value="1">★</span>
-                    <span data-value="2">★</span>
-                    <span data-value="3">★</span>
-                    <span data-value="4">★</span>
-                    <span data-value="5">★</span>
+            <div class="review-card">
+                <div class="stars">★★★★☆</div>
+                <div class="customer-name">Anjali Gupta</div>
+                <div class="service-type">Hair Styling</div>
+                <div class="review-text">Great haircut and styling. The service was excellent and the final look was exactly what I wanted.</div>
+                <div class="review-date">3 weeks ago</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="customer-name">Isha Patel</div>
+                <div class="service-type">Facial</div>
+                <div class="review-text">My skin felt so refreshed after the facial. Komal used quality products and the treatment was relaxing from start to finish.</div>
+                <div class="review-date">1 week ago</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="customer-name">Divya Verma</div>
+                <div class="service-type">Manicure/Pedicure</div>
+                <div class="review-text">Beautiful nail finish and a very hygienic process. I loved the color selection and the care taken during the appointment.</div>
+                <div class="review-date">10 days ago</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="customer-name">Pooja Jain</div>
+                <div class="service-type">Hair Color</div>
+                <div class="review-text">Got my hair colored and the shade matched perfectly. The application was smooth, and there was no damage to my hair.</div>
+                <div class="review-date">5 days ago</div>
+            </div>
+        </div>
+
+        <div class="add-review-section">
+            <h2>Share Your Experience</h2>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input id="name" type="text" placeholder="Enter your name" required>
                 </div>
-                <input type="hidden" id="rating" value="0">
-            </div>
-            
-            <div class="form-group">
-                <label>Your Review *</label>
-                <textarea id="review" required placeholder="Write your experience here..."></textarea>
-            </div>
-            
-            <button type="submit" class="submit-btn">Submit Review</button>
-        </form>
+                <div class="form-group">
+                    <label for="service">Service Type</label>
+                    <select id="service" required>
+                        <option value="">Select a service</option>
+                        <option>Bridal Makeup</option>
+                        <option>Party Makeup</option>
+                        <option>Hair Styling</option>
+                        <option>Facial</option>
+                        <option>Threading & Waxing</option>
+                        <option>Manicure/Pedicure</option>
+                        <option>Hair Color</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Rating</label>
+                    <div class="rating-input" id="ratingInput">
+                        <span data-value="1">★</span>
+                        <span data-value="2">★</span>
+                        <span data-value="3">★</span>
+                        <span data-value="4">★</span>
+                        <span data-value="5">★</span>
+                    </div>
+                    <input type="hidden" id="rating" value="0">
+                </div>
+                <div class="form-group">
+                    <label for="review">Your Review</label>
+                    <textarea id="review" placeholder="Write your experience here..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Review</button>
+            </form>
+        </div>
+
+        <div class="footer">
+            <p>Thank you for sharing your feedback. Your review helps us deliver better beauty experiences every day.</p>
+        </div>
     </div>
-    
-    <h2 style="color: #6b1d2f; margin-bottom: 20px;">⭐ Customer Reviews</h2>
-    <div class="reviews-grid" id="reviewsContainer">
-        <!-- Reviews will be added here dynamically -->
-        
-        <!-- Sample Reviews -->
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <div class="customer-name">Priya Singh</div>
-            <div class="service-type">Bridal Makeup</div>
-            <div class="review-text">Komal did my bridal makeup and I looked absolutely stunning! She's very professional and took time to understand my preferences. Highly recommended! 💕</div>
-            <div class="review-date">2 weeks ago</div>
-        </div>
-        
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <div class="customer-name">Neha Sharma</div>
-            <div class="service-type">Party Makeup</div>
-            <div class="review-text">Amazing work! The makeup lasted the entire event and looked perfect in photos. Komal is very talented and friendly. Will definitely book again! 🌟</div>
-            <div class="review-date">1 month ago</div>
-        </div>
-        
-        <div class="review-card">
-            <div class="stars">★★★★☆</div>
-            <div class="customer-name">Anjali Gupta</div>
-            <div class="service-type">Hair Styling</div>
-            <div class="review-text">Great haircut and styling! Komal understood exactly what I wanted. The only thing is the wait time was a bit long, but the result was worth it!</div>
-            <div class="review-date">3 weeks ago</div>
-        </div>
-        
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <div class="customer-name">Isha Patel</div>
-            <div class="service-type">Facial</div>
-            <div class="review-text">Had an amazing facial experience! My skin felt so fresh and glowing after the treatment. Komal uses quality products and is very professional. 5 stars! ✨</div>
-            <div class="review-date">1 week ago</div>
-        </div>
-        
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <div class="customer-name">Divya Verma</div>
-            <div class="service-type">Manicure/Pedicure</div>
-            <div class="review-text">Best salon for nails! The designs are beautiful and the service is excellent. Komal's team is very attentive and caring. Worth every penny! 💅</div>
-            <div class="review-date">10 days ago</div>
-        </div>
-        
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <div class="customer-name">Pooja Jain</div>
-            <div class="service-type">Hair Color</div>
-            <div class="review-text">Got my hair colored and it came out perfect! No damage, great color
+</body>
+</html>

@@ -1,12 +1,183 @@
-<form action="login.php" method="POST">
-    <h2>Login</h2>
-    <input type="text" name="username" placeholder="Username" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <button type="submit">Login</button>
-</form>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Glam by Komal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            background: #fcfbf7;
+            color: #333;
+            padding: 20px;
+        }
+        nav {
+            max-width: 1080px;
+            margin: 0 auto 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            background: #eee;
+            border-radius: 12px;
+            padding: 12px 18px;
+        }
+        .nav-brand {
+            font-weight: 700;
+            color: #6b1d2f;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 10px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #fff;
+            background: #b76e79;
+        }
+        .page-shell {
+            width: 100%;
+            max-width: 520px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .page-header {
+            background: #f8d7f0;
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 2rem;
+            color: #6b1d2f;
+            margin-bottom: 10px;
+        }
+        .page-header p {
+            color: #6b1d2f;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+        .page-body {
+            padding: 30px 24px 32px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #4a4a4a;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #b76e79;
+            box-shadow: 0 0 0 4px rgba(183,110,121,0.14);
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 14px 0;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            background: #b76e79;
+            color: white;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .submit-btn:hover {
+            background: #9a5a64;
+            transform: translateY(-1px);
+        }
+        .form-footer {
+            margin-top: 18px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .form-footer a {
+            color: #b76e79;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .page-footer {
+            padding: 18px 24px 24px;
+            border-top: 1px solid #f0e2f1;
+            text-align: center;
+            color: #777;
+            font-size: 0.92rem;
+        }
+        .page-footer a {
+            color: #b76e79;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-brand">Glam by Komal</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="reviews.html">Reviews</a>
+        </div>
+    </nav>
+    <main>
+        <section class="page-shell">
+            <div class="page-header">
+                <h1>Welcome Back</h1>
+                <p>Login to book your Glam by Komal services and manage your appointments with ease.</p>
+            </div>
 
-<!-- Yahan signup ka link add karein -->
-<p>Don't have an account? <a href="signup.html" style="color: blue;">Sign up here</a></p>
+        <div class="page-body">
+            <form action="login.php" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input id="username" type="text" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="submit-btn"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+            </form>
+            <div class="form-footer">
+                Don't have an account? <a href="signup.html">Sign up here</a>
+            </div>
+        </div>
 
-
-
+        <div class="page-footer">
+            <p>Need help? <a href="index.html">Contact us</a> or check our services.</p>
+        </div>
+    </section>
+    </main>
+</body>
+</html>
