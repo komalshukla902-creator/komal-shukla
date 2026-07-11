@@ -1,14 +1,174 @@
-<!-- signup.html -->
-<form action="https://formspree.io/f/xlgyveeq" method="POST">
- <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-    
-    <button type="submit">Sign Up</button>
-</form>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Glam by Komal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            background: #fcfbf7;
+            color: #333;
+            padding: 20px;
+        }
+        nav {
+            max-width: 1080px;
+            margin: 0 auto 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            background: #eee;
+            border-radius: 12px;
+            padding: 12px 18px;
+        }
+        .nav-brand {
+            font-weight: 700;
+            color: #6b1d2f;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 10px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #fff;
+            background: #b76e79;
+        }
+        .signup-shell {
+            width: 100%;
+            max-width: 520px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 18px 45px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .signup-header {
+            background: #f8d7f0;
+            padding: 30px 24px;
+            text-align: center;
+        }
+        .signup-header h1 {
+            font-size: 2.2rem;
+            color: #6b1d2f;
+            margin-bottom: 10px;
+        }
+        .signup-header p {
+            color: #6b1d2f;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        .signup-body {
+            padding: 32px 24px 28px;
+        }
+        .signup-body .form-group {
+            margin-bottom: 18px;
+        }
+        .signup-body label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4a4a4a;
+            font-weight: 600;
+        }
+        .signup-body input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 14px;
+            font-size: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .signup-body input:focus {
+            outline: none;
+            border-color: #b76e79;
+            box-shadow: 0 0 0 4px rgba(183,110,121,0.14);
+        }
+        .signup-body .submit-btn {
+            width: 100%;
+            padding: 14px 0;
+            border: none;
+            border-radius: 14px;
+            background: #b76e79;
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .signup-body .submit-btn:hover {
+            background: #9a5a64;
+            transform: translateY(-1px);
+        }
+        .signup-footer {
+            padding: 18px 24px 28px;
+            border-top: 1px solid #f0e2f1;
+            text-align: center;
+            color: #5c5c5c;
+            font-size: 0.95rem;
+        }
+        .signup-footer a {
+            color: #b76e79;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-brand">Glam by Komal</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="reviews.html">Reviews</a>
+        </div>
+    </nav>
+    <main>
+        <section class="signup-shell">
+            <div class="signup-header">
+                <h1>Get Started</h1>
+                <p>Join Glam by Komal to book services, receive offers, and manage your appointments all in one place.</p>
+            </div>
+            <div class="signup-body">
+                <form action="https://formspree.io/f/xlgyveeq" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input id="name" type="text" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input id="email" type="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" name="password" placeholder="Create a password" required>
+                    </div>
+                    <button type="submit" class="submit-btn"><i class="fa-solid fa-user-plus"></i> Create Account</button>
+                </form>
+            </div>
+            <div class="signup-footer">
+                Already have an account? <a href="login.html">Login here</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+'@
+Set-Content -Path 'c:\Users\OM SHANKAR SINGH\OneDrive\Desktop\Github_Work\komal-shukla\signup.html' -Value $signup -Encoding UTF8
